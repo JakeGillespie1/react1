@@ -30,6 +30,7 @@ class BasketballTeam extends React.Component<BBallProps> {
         <h4>
           {oneTeam.city}, {oneTeam.state}
         </h4>
+        <br />
       </div>
     );
   }
@@ -50,11 +51,22 @@ function BBallList() {
   );
 }
 
+function MyButton() {
+  return (
+    <button onClick={() => alert('Learn more about Basketball teams here!!')}>
+      Welcome message
+    </button>
+  );
+}
+
 // We cahnged this function to display new things
 function App() {
   return (
     <div className="App">
       <Welcome />
+      <p>Click the button below to view a welcome message</p>
+      <MyButton />
+      <br />
       {/* In order to get the list of bands,
       we created another ocmponenet that is just a single band
       (see Band Class) */}
