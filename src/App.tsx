@@ -1,6 +1,8 @@
 import React from 'react';
 import './App.css';
 import { JSX } from 'react/jsx-runtime';
+import BasketballTeams from './CollegeBasketballTeams.json';
+import { ListFormat } from 'typescript';
 
 interface BBallProps {
   school: string;
@@ -9,7 +11,7 @@ interface BBallProps {
   city: string;
 }
 
-const bandNames = require('./CollegeBasketballTeams.json');
+const basketTeams = BasketballTeams.teams;
 
 function Welcome() {
   return <h1>List of Basketball Teams</h1>;
@@ -41,15 +43,9 @@ function BBallList() {
       and says I want to map one band at a time by
       going to the band component and grabbing the
       information for that one band. */}
-      {bandNames.map(
-        (
-          oneTeam: JSX.IntrinsicAttributes &
-            JSX.IntrinsicClassAttributes<BasketballTeam> &
-            Readonly<BBallProps>,
-        ) => (
-          <BasketballTeam {...oneTeam} />
-        ),
-      )}
+      {basketTeams.map((oneTeam: BBallProps) => (
+        <BasketballTeam {...oneTeam} />
+      ))}
     </div>
   );
 }
