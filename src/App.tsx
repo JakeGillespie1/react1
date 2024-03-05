@@ -26,10 +26,10 @@ class BasketballTeam extends React.Component<BBallProps> {
     return (
       <div>
         <h2>{oneTeam.school}</h2>
-        <h2>{oneTeam.name}</h2>
-        <h2>
+        <h4>{oneTeam.name}</h4>
+        <h4>
           {oneTeam.city}, {oneTeam.state}
-        </h2>
+        </h4>
       </div>
     );
   }
